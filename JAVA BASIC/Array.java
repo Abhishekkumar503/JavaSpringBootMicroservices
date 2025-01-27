@@ -4,7 +4,7 @@ public class Array {
         arr[0]=1;
         arr[1]=5;
         arr[2]=9;
-        arr[3]=87;
+        arr[3]=7;
 
         int i=0;
         while(i<4)
