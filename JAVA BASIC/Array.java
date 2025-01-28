@@ -17,15 +17,15 @@
 
 class Huamn
 {
-   Private int age;
-   Private String name;
+   private  int age;
+    private String name;
 
    public int getAge()
    {
     return age;
    }
 
-   public String getname()
+   public String getName()
    {
     return name;
    }
@@ -48,7 +48,7 @@ public class Array {
         Huamn h =new Huamn();
         h.setAge(25);
         h.setName("Abhishek");
-        System.out.println(h.getName+" : "+h.getAge);
+        System.out.println(h.getName()+" : "+h.getAge());
     }
 }
 
