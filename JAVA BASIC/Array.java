@@ -15,7 +15,7 @@
 //     }
 // }
 
-class Huamn
+class Human1
 {
    private  int age;
     private String name;
@@ -45,7 +45,7 @@ class Huamn
 
 public class Array {
     public static void main(String[] args) {
-        Huamn h =new Huamn();
+        Human1 h =new Human1();
         h.setAge(25);
         h.setName("Abhishek");
         System.out.println(h.getName()+" : "+h.getAge());
