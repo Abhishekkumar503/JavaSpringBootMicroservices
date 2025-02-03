@@ -23,3 +23,27 @@ public class ThreadsExe {
         tb.start();
     }
 }
+
+
+/* Output
+HI
+HELLO
+HELLO
+HELLO
+HELLO
+HELLO
+HELLO
+HELLO
+HELLO
+HELLO
+HELLO
+HI
+HI
+HI
+HI
+HI
+HI
+HI
+HI
+HI
+ */
