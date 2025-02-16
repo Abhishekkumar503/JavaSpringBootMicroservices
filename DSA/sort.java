@@ -92,7 +92,7 @@ public class sort {
 
 
 
-        //***************QUICK SHORT ****************************
+        //***************QUICK SORT ****************************
 
         int[] arr={6,5,2,8,9,4};
 
@@ -107,7 +107,80 @@ public class sort {
         System.out.println();
 
 
+        //***************MERGE SORT ****************************
+        int[] arr1={6,5,2,8,9,4};
+        System.out.print("Before sorting : ");
+        for(int n:arr1)
+            System.out.print(n+" ");
+        System.out.println();
+        mergeSort(arr,0,arr1.length-1);
+        System.out.print("After sorting : ");
+        for(int n:arr1)
+            System.out.print(n+" ");
+        System.out.println();
 
+
+
+
+    }
+
+    private static void mergeSort(int[] arr, int left, int right) {
+        if(left >= right)
+            return;
+
+//        if(left<right)
+//        {
+            int mid=(left+right)/2;
+            mergeSort(arr,left,mid);
+            mergeSort(arr,mid+1,right);
+            mergeTheArray(arr,left,mid,right);
+//        }
+    }
+
+    private static void mergeTheArray(int[] arr, int l, int mid, int r) {
+        int n1=mid-l+1;
+        int n2=r-mid;
+        int [] arr1=new int[n1];
+        int [] arr2=new int[n2];
+
+        for(int x=0;x<n1;x++)
+        {
+            arr1[x]=arr[l+x];
+
+        }
+        for(int x=0;x<n2;x++)
+        {
+            arr2[x]=arr[x+1+mid];
+
+        }
+
+        int i=0,j=0,k=l;
+        while(i<n1&&j<n2)
+        {
+            if(arr1[i]<arr2[j])
+            {
+                arr[k]=arr1[i];
+                i++;
+            }
+            else
+            {
+                arr[k]=arr2[j];
+                j++;
+            }
+            k++;
+        }
+        while(i<n1)
+        {
+            arr[k]=arr1[i];
+            i++;
+            k++;
+        }
+        while(j<n2)
+        {
+            arr[k]=arr2[j];
+            j++;
+            k++;
+        }
     }
 
     private static void quickSort(int[] arr, int low, int high) {
