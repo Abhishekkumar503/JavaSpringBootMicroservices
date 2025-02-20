@@ -26,9 +26,13 @@ public class Runner {
         dSt.push(2);
         dSt.push(30);
         dSt.show();
-        for (int i = 101; i <= 199; i++)
+        for (int i = 101; i <= 299; i++)
             dSt.push(i);
         dSt.show();
+        for (int i = 101; i <= 199; i++)
+            dSt.pop();
+        dSt.show();
+
 
     }
 }

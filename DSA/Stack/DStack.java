@@ -21,10 +21,28 @@ public class DStack {
     }
 
     public int pop() {
-        int data =stack[--top];
-        stack[top]=0;
+        int data=0;
+        if(isEmpty())
+            System.out.println("Stack is empty");
+        else {
+            data = stack[--top];
+            stack[top] = 0;
+            shirnk();
+        }
         return data;
     }
+
+    private void shirnk() {
+        int length=size();
+        if(length<=(capacity/2)/2)
+            capacity/=2;
+
+        int[] newStack= new int[capacity];
+        System.arraycopy(stack,0,newStack,0,length);
+        stack=newStack;
+
+    }
+
     public int peek() {
         int data =stack[--top];
         return data;
