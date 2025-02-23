@@ -1,5 +1,9 @@
 public class Calc {
     public static void main(String[] args) {
-        C
+
+        CalcOp cal=new CalcOp();
+        cal.Divide(15,3);
+
+        cal.Multiply(22,43);
     }
 }
