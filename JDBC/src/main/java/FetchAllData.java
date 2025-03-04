@@ -1,13 +1,16 @@
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
-public class NewConnection {
+public class FetchAllData {
     public static void main(String[] args) throws Exception {
         //declare initail variable with the values
         String url= "jdbc:mysql://localhost:3306/Test01";
         String userName="root";
         String passWord="Abhishek@1";
         // Query
-        String query="select id from student where name=\"Udai\"";
+        String query="select * from student";
         // Class for name
         Class.forName("com.mysql.cj.jdbc.Driver");
         // Establishing a connection
@@ -18,11 +21,19 @@ public class NewConnection {
         ResultSet rs=st.executeQuery(query);
 
         // to incremnet the pointer use
-        rs.next();
+        while(rs.next()) {
+            rs.next();
+            String userData = rs.getInt(1) + " : " + rs.getString(2);
+            System.out.println(userData);
+        }
 
-        int id=rs.getInt("id");
-
-        System.out.println(id);
+//        rs.next();
+//        String userData2 = rs.getInt(1)+" : "+rs.getString(2);
+//        System.out.println(userData2);
+//
+//        rs.next();
+//        String userData3 = rs.getInt(1)+" : "+rs.getString(2);
+//        System.out.println(userData3);
 
         //closing the connections
         st.close();
@@ -30,8 +41,8 @@ public class NewConnection {
     }
 }
 
-// jdbc:mysql://localhost:3306
-
 /*
-OUTPUT will be 1 or 2 ,its depend on database
+Output
+2 : Udai
+4 : Sivam
  */
