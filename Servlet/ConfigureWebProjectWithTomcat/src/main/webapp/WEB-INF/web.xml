@@ -12,7 +12,12 @@
   
   <servlet>
   <servlet-name>addition</servlet-name>
-  <servlet-class>com.learner.AddServlet</servlet-class>
+  <servlet-class>com.learner.MyServlet</servlet-class>
+  
+  <init-param>
+  <param-name>name</param-name>
+  <param-value>Udai</param-value>
+  </init-param>
   </servlet>
   
   <servlet-mapping>
@@ -30,4 +35,13 @@
   <url-pattern>/Square</url-pattern>
   </servlet-mapping>
   
+  <context-param>
+  <param-name>name</param-name>
+  <param-value>Abhishek</param-value>
+  </context-param>
+  
+  <context-param>
+  <param-name>Bike</param-name>
+  <param-value>Royal_Enfield</param-value>
+  </context-param>
 </web-app>
