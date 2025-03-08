@@ -11,12 +11,23 @@
   </welcome-file-list>
   
   <servlet>
-  <servlet-name>A</servlet-name>
+  <servlet-name>addition</servlet-name>
   <servlet-class>com.learner.AddServlet</servlet-class>
   </servlet>
   
   <servlet-mapping>
-  <servlet-name>A</servlet-name>
-  <url-pattern>add</url-pattern>
+  <servlet-name>addition</servlet-name>
+  <url-pattern>/add</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>square</servlet-name>
+  <servlet-class>com.learner.SquareServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>square</servlet-name>
+  <url-pattern>/Square</url-pattern>
+  </servlet-mapping>
+  
 </web-app>
