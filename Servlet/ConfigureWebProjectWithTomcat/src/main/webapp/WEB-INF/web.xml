@@ -10,7 +10,7 @@
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
   
-  <servlet>
+  <!-- <servlet>
   <servlet-name>addition</servlet-name>
   <servlet-class>com.learner.MyServlet</servlet-class>
   
@@ -44,4 +44,5 @@
   <param-name>Bike</param-name>
   <param-value>Royal_Enfield</param-value>
   </context-param>
+  -->
 </web-app>

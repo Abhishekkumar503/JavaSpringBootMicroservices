@@ -6,12 +6,14 @@ import java.io.IOException;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
+@WebServlet("/add")
 public class AddServlet extends HttpServlet{
 	public void doPost(HttpServletRequest request,HttpServletResponse response) throws IOException, ServletException {
 		int sum = Integer.parseInt(request.getParameter("Num1")) + Integer.parseInt(request.getParameter("Num2")) ;
