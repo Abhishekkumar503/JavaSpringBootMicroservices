@@ -7,19 +7,25 @@ import java.sql.SQLException;
 public class TestJDBCConnection {
     public static void main(String[] args) {
         // Database Credentials
-        String url = "jdbc:postgresql://localhost:9090/sampledb";  // Change port if needed
+        String url = "jdbc:postgresql://localhost:9090/postgres";  // Usually PostgreSQL uses port 5432
         String username = "postgres";
-        String password = "SCRAM-SHA-256$4096:CG5l1hEjHjhBcoGLBdHMDQ==$KrAY9TXenNl4PHDyBSZObdUlRZfw3XN5UltZvEQvnNE=:doSpG4lftBi9q/Y+Vcu2QdquX6BWYigYRT3LZyR/dU4=";  // Replace with your actual password
+        String password = "Abhishek@1";  // Replace with your actual password
 
-        // Check Connection
-        try (Connection conn = DriverManager.getConnection(url, username, password)) {
-            if (conn != null) {
-                System.out.println("✅ Connection Successful!");
-            } else {
-                System.out.println("❌ Connection Failed!");
+        // Load PostgreSQL Driver and Check Connection
+        try {
+            Class.forName("org.postgresql.Driver"); // Ensure the driver is available in classpath
+            try (Connection conn = DriverManager.getConnection(url, username, password)) {
+                if (conn != null) {
+                    System.out.println("✅ Connection Successful!");
+                } else {
+                    System.out.println("❌ Connection Failed!");
+                }
+            } catch (SQLException e) {
+                System.out.println("❌ SQL Exception: " + e.getMessage());
             }
-        } catch (SQLException e) {
-            System.out.println("❌ Connection Failed! Error: " + e.getMessage());
+        } catch (ClassNotFoundException e) {
+            System.out.println("❌ PostgreSQL JDBC Driver not found.");
+            e.printStackTrace();
         }
     }
 }
