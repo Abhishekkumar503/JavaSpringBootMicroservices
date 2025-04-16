@@ -7,11 +7,14 @@
 <title>JSTL Demo</title>
 </head>
 <body>
-<p>My name is ${Student.name}</p>
+
 
 <c:forEach items = "${students}" var = "s">
 ${s} <br>
 </c:forEach>
+
+<!-- Now to connect with database with taglib -->
+<s
 
 </body>
 </html>
