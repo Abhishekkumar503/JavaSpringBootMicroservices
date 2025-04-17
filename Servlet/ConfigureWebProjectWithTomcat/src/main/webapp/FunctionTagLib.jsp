@@ -15,6 +15,17 @@ Length : ${fn:length(str)}
 <br>
 ${s}
 </c:forEach>
-
+<br>
+index : ${fn:indexOf(str,"is")}
+<br>
+is there : ${fn:contains(str,"java")}
+<br>
+<c:if test="${fn:contains(str,'Abhishek')}"> Abhishek is available</c:if>
+<br>
+<c:if test="${fn:endsWith(str,'Abhishek')}"> YES, Ending with Abhishek</c:if>
+<br>
+${fn:toUpperCase(str)}
+<br>
+${fn:toLowerCase(str)}
 </body>
 </html>
