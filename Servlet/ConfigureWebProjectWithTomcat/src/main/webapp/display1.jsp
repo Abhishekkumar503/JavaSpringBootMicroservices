@@ -14,7 +14,7 @@ ${s} <br>
 </c:forEach>
 
 <!-- Now to connect with database with taglib -->
-<s
+
 
 </body>
 </html>
