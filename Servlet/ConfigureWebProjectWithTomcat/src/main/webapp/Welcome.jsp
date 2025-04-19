@@ -4,13 +4,9 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Filter servlet Demo</title>
+<title>Welcome</title>
 </head>
 <body>
-<form action="FilterServlet"> 
-		<input type="text" name="id"><br>
-		<input type="text" name="name"><br>
-		<input type="submit">
-		</form>
+<h1>Welcome to Filter!</h1>)
 </body>
 </html>
