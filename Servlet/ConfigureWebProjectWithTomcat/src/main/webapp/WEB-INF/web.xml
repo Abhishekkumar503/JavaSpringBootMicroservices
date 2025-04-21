@@ -15,23 +15,5 @@
       <el-ignored>false</el-ignored>
     </jsp-property-group>
   </jsp-config>
-  <filter>
-    <display-name>display1</display-name>
-    <filter-name>IdFilter</filter-name>
-    <filter-class>com.learner.IdFilter</filter-class>
-  </filter>
-  <filter-mapping>
-    <filter-name>IdFilter</filter-name>
-    <url-pattern>/Welcome.jsp</url-pattern>
-  </filter-mapping>
-  <servlet>
-    <description></description>
-    <display-name>logout</display-name>
-    <servlet-name>logout</servlet-name>
-    <servlet-class>com.learner.Logout</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>logout</servlet-name>
-    <url-pattern>/logout</url-pattern>
-  </servlet-mapping>
+  
 </web-app>

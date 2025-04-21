@@ -8,11 +8,13 @@
 </head>
 <body>
 <%
+//Hearcoded
+response.setHeader("Cache-Control","no-cache,no-store,must-revalidate");
 if(session.getAttribute("username")==null && session.getAttribute("password")==null)
 	response.sendRedirect("login.jsp");
 %>
 
 <h1>Welcome ${username} !!</h1>
-<video src="C:\Users\Abh!shek\Desktop\New folder (3)\Whiskey_Di_Botal (Official_Video)__Preet_Hundal__Jasmine_Sandlas__Latest_Songs_2018(2K).webm"></video>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/kclXuc_J50Y?si=ckXKTpSGcYdWvFt2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </body>
 </html>

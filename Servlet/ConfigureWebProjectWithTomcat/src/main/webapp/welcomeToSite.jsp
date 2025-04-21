@@ -8,6 +8,14 @@
 </head>
 <body>
 <%
+// Hearcoded
+response.setHeader("Cache-Control","no-cache,no-store,must-revalidate");
+
+response.setHeader("pragma","no-cache"); // This used for HTTP 1.0
+
+response.setHeader("Expires", "0"); // Proxies 
+		
+		
 if(session.getAttribute("username")==null && session.getAttribute("password")==null)
 	response.sendRedirect("login.jsp");
 %>
@@ -15,7 +23,7 @@ if(session.getAttribute("username")==null && session.getAttribute("password")==n
 <h1>Now You're able to login and navigate to welcome Page... :-) </h1>
 
 <h2>Do you want to see video ? If yes then  </h2>
-<a href="videos.jsp">Click here!</a>
+<a href="videos.jsp">Click Below button!</a>
 
 
 <h3>Do you want to logout? </h3>

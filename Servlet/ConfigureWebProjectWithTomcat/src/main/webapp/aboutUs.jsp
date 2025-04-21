@@ -8,6 +8,8 @@
 </head>
 <body>
 <%
+//Hearcoded
+response.setHeader("Cache-Control","no-cache,no-store,must-revalidate");
 if(session.getAttribute("username")==null && session.getAttribute("password")==null)
 	response.sendRedirect("login.jsp");
 %>
