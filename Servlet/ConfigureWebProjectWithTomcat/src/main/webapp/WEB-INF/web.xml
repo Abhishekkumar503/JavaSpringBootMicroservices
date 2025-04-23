@@ -15,5 +15,14 @@
       <el-ignored>false</el-ignored>
     </jsp-property-group>
   </jsp-config>
-  
+  <servlet>
+    <description></description>
+    <display-name>FileUpload</display-name>
+    <servlet-name>FileUpload</servlet-name>
+    <servlet-class>FileUpload</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FileUpload</servlet-name>
+    <url-pattern>/upload</url-pattern>
+  </servlet-mapping>
 </web-app>
