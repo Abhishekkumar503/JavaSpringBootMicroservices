@@ -24,6 +24,7 @@ public class App
        Configuration con = new Configuration();
        SessionFactory sf= con.buildSessionFactory();
        Session session = sf.openSession();
+       session.save(a1);
        
     }
 }
