@@ -1,7 +1,12 @@
 package Hibernate_Learnings.Hibernate;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 public class Aliens {
 
+	@Id
 	private int aid;
 	private String aname;
 	private String acolor;
