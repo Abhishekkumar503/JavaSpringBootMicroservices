@@ -35,4 +35,13 @@ public class AnnotationsClasses {
     private String Aname;
    @Column(name = "ADescription")
     private String ADesc;
+
+    @Override
+    public String toString() {
+        return "AnnotationsClasses{" +
+                "Aid=" + Aid +
+                ", Aname='" + Aname + '\'' +
+                ", ADesc='" + ADesc + '\'' +
+                '}';
+    }
 }

@@ -11,12 +11,14 @@ public class App
 {
     public static void main( String[] args )
     {
-      /*
+        /*
         Aliens a1 =new Aliens();
        a1.setAid(102);
        a1.setAname("Udai");
        a1.setAcolor("Blue");
-       */
+       s
+         */
+
 
         AnnotationsClasses aC = new AnnotationsClasses();
         aC.setAid(4);
