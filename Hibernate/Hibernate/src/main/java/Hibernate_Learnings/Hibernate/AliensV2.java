@@ -4,11 +4,11 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
 @Entity
-public class Aliens {
+public class AliensV2 {
 
 	@Id
 	private int aid;
-	private String aname;
+	private EmbededableObject aname;            //  this obj variable from class EmbededableObject.java
 	private String acolor;
 	public int getAid() {
 		return aid;
@@ -16,12 +16,15 @@ public class Aliens {
 	public void setAid(int aid) {
 		this.aid = aid;
 	}
-	public String getAname() {
+
+	public EmbededableObject getAname() {
 		return aname;
 	}
-	public void setAname(String aname) {
+
+	public void setAname(EmbededableObject aname) {
 		this.aname = aname;
 	}
+
 	public String getAcolor() {
 		return acolor;
 	}
