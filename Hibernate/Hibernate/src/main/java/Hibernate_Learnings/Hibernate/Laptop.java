@@ -1,7 +1,7 @@
 package Hibernate_Learnings.Hibernate;
 
 
-import jakarta.persistence.Embeddable;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 

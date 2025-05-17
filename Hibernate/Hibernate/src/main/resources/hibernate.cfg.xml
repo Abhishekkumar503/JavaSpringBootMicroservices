@@ -36,6 +36,8 @@
         <!-- Mention your entity class -->
 <!--        <mapping class="Hibernate_Learnings.Hibernate.Aliens"/>-->
 <!--        <mapping class="Hibernate_Learnings.Hibernate.AnnotationsClasses"/>-->
-        <mapping class="Hibernate_Learnings.Hibernate.AliensV2"/>
+<!--        <mapping class="Hibernate_Learnings.Hibernate.AliensV2"/>-->
+        <mapping class="Hibernate_Learnings.Hibernate.Student"/>
+
     </session-factory>
 </hibernate-configuration>

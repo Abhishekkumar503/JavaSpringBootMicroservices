@@ -1,6 +1,13 @@
 package Hibernate_Learnings.Hibernate;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "Student_Laptop_Combination")
 public class Student {
+    @Id
     private int rollnumber;
     private String studentName;
     private int Marks;

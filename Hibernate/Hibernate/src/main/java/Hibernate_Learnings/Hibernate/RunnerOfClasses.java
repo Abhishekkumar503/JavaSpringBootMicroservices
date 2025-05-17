@@ -1,29 +1,37 @@
 package Hibernate_Learnings.Hibernate;
 
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
+
 public class RunnerOfClasses {
+    public static void main(String[] args) {
 
-    Laptop laptop = new Laptop();
-    laptop.setlId(1);
-    laptop.setlName("Lenovo");
+        Laptop laptop = new Laptop();
+        laptop.setlId(2);
+        laptop.setlName("HP");
 
-    Student student = new Student();
-    student.setRollnumber(101);
-    student.setStudentName("Abis");
-    student.setMarks(66.5);
 
-    // Now for saving these details use session of Hibernate
+        Student student = new Student();
+        student.setRollnumber(102);
+        student.setStudentName("UD");
+        student.setMarks(60);
 
-    Configuration con = new Configuration().configure().addAnnotatedClass(Aliens.class);
-    SessionFactory sf= con.buildSessionFactory();
-    Session session = sf.openSession();
+        // Now for saving these details use session of Hibernate
 
-    Transaction tx =session.beginTransaction(); // Push all data with help of commit/ Now for saving these details use session of Hibernate
+        Configuration con = new Configuration().configure().addAnnotatedClass(Laptop.class).addAnnotatedClass(Student.class);
+        SessionFactory sf = con.buildSessionFactory();
+        Session session = sf.openSession();
 
-    session.save();
-    tx.commit();
+        Transaction tx =session.beginTransaction();
+
+        session.save(laptop);
+        session.save(student);
+
+        tx.commit();
+    }
 }
