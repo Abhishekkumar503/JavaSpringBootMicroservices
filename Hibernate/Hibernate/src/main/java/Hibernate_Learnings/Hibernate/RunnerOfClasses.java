@@ -7,19 +7,32 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
+import java.util.List;
+
 
 public class RunnerOfClasses {
     public static void main(String[] args) {
 
         Laptop laptop = new Laptop();
-        laptop.setlId(2);
-        laptop.setlName("HP");
+        laptop.setlId(6);
+        laptop.setlName("Mac_M1");
+        //ManyToOne
+
+
 
 
         Student student = new Student();
-        student.setRollnumber(102);
-        student.setStudentName("UD");
-        student.setMarks(60);
+        student.setRollnumber(107);
+        student.setStudentName("KK");
+        student.setMarks(53);
+
+        // 1t1
+//        student.setLaptop(laptop);
+
+        //1ToMany
+        student.getlList().add(laptop);
+
+
 
         // Now for saving these details use session of Hibernate
 

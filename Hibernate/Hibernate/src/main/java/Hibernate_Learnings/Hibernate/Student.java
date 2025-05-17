@@ -1,8 +1,9 @@
 package Hibernate_Learnings.Hibernate;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "Student_Laptop_Combination")
@@ -11,6 +12,31 @@ public class Student {
     private int rollnumber;
     private String studentName;
     private int Marks;
+
+    // Creating Laptop object with 1 to 1 mapping
+    @OneToOne
+    private Laptop laptop;
+
+
+    public Laptop getLaptop() {
+        return laptop;
+    }
+
+    public void setLaptop(Laptop laptop) {
+        this.laptop = laptop;
+    }
+
+
+    @OneToMany(mappedBy = "student")
+    private List<Laptop> lList = new ArrayList<Laptop>();
+
+    public List<Laptop> getlList() {
+        return lList;
+    }
+
+    public void setlList(List<Laptop> lList) {
+        this.lList = lList;
+    }
 
     public int getRollnumber() {
         return rollnumber;
@@ -42,6 +68,8 @@ public class Student {
                 "rollnumber=" + rollnumber +
                 ", studentName='" + studentName + '\'' +
                 ", Marks=" + Marks +
+                ", laptop=" + laptop +
+                ", lList=" + lList +
                 '}';
     }
 }
