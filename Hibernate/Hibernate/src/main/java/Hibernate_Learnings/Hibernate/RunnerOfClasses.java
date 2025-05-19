@@ -14,17 +14,14 @@ public class RunnerOfClasses {
     public static void main(String[] args) {
 
         Laptop laptop = new Laptop();
-        laptop.setlId(6);
-        laptop.setlName("Mac_M1");
-        //ManyToOne
-
-
+        laptop.setlId(14);
+        laptop.setlName("Mac_M5_PRO_MAX");
 
 
         Student student = new Student();
-        student.setRollnumber(107);
-        student.setStudentName("KK");
-        student.setMarks(53);
+        student.setRollnumber(114);
+        student.setStudentName("SSS");
+        student.setMarks(63);
 
         // 1t1
 //        student.setLaptop(laptop);
@@ -32,6 +29,10 @@ public class RunnerOfClasses {
         //1ToMany
         student.getlList().add(laptop);
 
+        student.getLaptop(laptop);
+
+        //Many TO Many
+        laptop.getStudent1().add(student);
 
 
         // Now for saving these details use session of Hibernate

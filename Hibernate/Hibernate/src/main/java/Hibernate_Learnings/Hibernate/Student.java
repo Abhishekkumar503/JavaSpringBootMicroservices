@@ -18,8 +18,8 @@ public class Student {
     private Laptop laptop;
 
 
-    public Laptop getLaptop() {
-        return laptop;
+    public Laptop getLaptop(Laptop laptop) {
+        return this.laptop;
     }
 
     public void setLaptop(Laptop laptop) {
@@ -27,7 +27,8 @@ public class Student {
     }
 
 
-    @OneToMany(mappedBy = "student")
+   // @OneToMany(mappedBy = "student")
+    @ManyToMany(mappedBy = "student")
     private List<Laptop> lList = new ArrayList<Laptop>();
 
     public List<Laptop> getlList() {

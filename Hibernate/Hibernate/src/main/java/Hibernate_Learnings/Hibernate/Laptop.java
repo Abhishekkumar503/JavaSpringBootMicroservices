@@ -4,7 +4,11 @@ package Hibernate_Learnings.Hibernate;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Laptop {
@@ -17,13 +21,29 @@ public class Laptop {
     @ManyToOne
     private Student student ;
 
-    public Student getStudent(Student student) {
-        return this.student;
+    public Student getStudent() {
+        return student;
     }
+
+
 
     public void setStudent(Student student) {
         this.student = student;
     }
+
+    @ManyToMany
+    private List<Student> student1 = new ArrayList<Student>();
+
+
+    public List<Student> getStudent1() {
+        return student1;
+    }
+
+    public void setStudent1(List<Student> student1) {
+        this.student1 = student1;
+    }
+
+
 
     
 
