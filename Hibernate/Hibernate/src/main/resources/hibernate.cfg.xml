@@ -37,7 +37,9 @@
 <!--        <mapping class="Hibernate_Learnings.Hibernate.Aliens"/>-->
 <!--        <mapping class="Hibernate_Learnings.Hibernate.AnnotationsClasses"/>-->
 <!--        <mapping class="Hibernate_Learnings.Hibernate.AliensV2"/>-->
-        <mapping class="Hibernate_Learnings.Hibernate.Student"/>
+<!--        <mapping class="Hibernate_Learnings.Hibernate.Student"/>-->
+        <mapping class="Hibernate_Learnings.Hibernate.Caching.LevelCaching"/>
+
 
     </session-factory>
 </hibernate-configuration>
