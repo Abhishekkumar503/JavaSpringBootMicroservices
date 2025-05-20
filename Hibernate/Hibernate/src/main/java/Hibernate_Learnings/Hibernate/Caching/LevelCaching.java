@@ -33,4 +33,13 @@ public class LevelCaching {
     public void setLevelNumber(int levelNumber) {
         this.levelNumber = levelNumber;
     }
+
+    @Override
+    public String toString() {
+        return "LevelCaching{" +
+                "levelNumber=" + levelNumber +
+                ", levelName='" + levelName + '\'' +
+                ", leveltype='" + leveltype + '\'' +
+                '}';
+    }
 }

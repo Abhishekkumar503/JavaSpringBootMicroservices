@@ -9,18 +9,41 @@ import org.hibernate.cfg.Configuration;
 public class CacheRunner {
     public static void main(String[] args) {
 
+        // To add records into database
+        /*
         LevelCaching levelCaching = new LevelCaching();
-        levelCaching.setLevelNumber(102);
-        levelCaching.setLevelName("Udai");
-        levelCaching.setLeveltype("LevelOneCaching");
+        levelCaching.setLevelNumber(104);
+        levelCaching.setLevelName("Rahul");
+        levelCaching.setLeveltype("LevelTwoCaching");
+        */
+
+        /*
+        // Level One Caching
+        LevelCaching levelCaching = null;
 
         Configuration con = new Configuration().configure().addAnnotatedClass(LevelCaching.class);
         SessionFactory sf = con.buildSessionFactory();
         Session session = sf.openSession();
-
         Transaction tx =session.beginTransaction();
-
-        session.save(levelCaching);
+        levelCaching = (LevelCaching) session.get(LevelCaching.class,101);
+        System.out.println(levelCaching);
         tx.commit();
+        session.close();
+
+
+        Session session1 = sf.openSession();
+        Transaction tx1 =session1.beginTransaction();
+        levelCaching = (LevelCaching) session1.get(LevelCaching.class,101);
+        System.out.println(levelCaching);
+        tx1.commit();
+        session1.close();
+
+//        session.save(levelCaching);
+//        tx.commit();
+
+
+         */
+        //Level Two Caching
+        
     }
 }

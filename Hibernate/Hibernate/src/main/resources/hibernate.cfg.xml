@@ -41,5 +41,6 @@
         <mapping class="Hibernate_Learnings.Hibernate.Caching.LevelCaching"/>
 
 
+
     </session-factory>
 </hibernate-configuration>
