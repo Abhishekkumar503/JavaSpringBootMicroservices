@@ -1,6 +1,8 @@
 package Hibernate_Learnings.Hibernate.Caching;
 
 
+
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -17,7 +19,7 @@ public class CacheRunner {
         levelCaching.setLeveltype("LevelTwoCaching");
         */
 
-        /*
+
         // Level One Caching
         LevelCaching levelCaching = null;
 
@@ -42,7 +44,7 @@ public class CacheRunner {
 //        tx.commit();
 
 
-         */
+
         //Level Two Caching
         
     }

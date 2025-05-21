@@ -8,7 +8,7 @@
     <session-factory>
 
         <!-- Database connection settings -->
-<!--        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/your_database_name</property>-->
+        <!--<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/your_database_name</property>-->
 
         <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
         <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/Test02</property>
@@ -34,13 +34,19 @@
         <property name="hbm2ddl.auto">update</property>
 
         <!-- Mention your entity class -->
-<!--        <mapping class="Hibernate_Learnings.Hibernate.Aliens"/>-->
-<!--        <mapping class="Hibernate_Learnings.Hibernate.AnnotationsClasses"/>-->
-<!--        <mapping class="Hibernate_Learnings.Hibernate.AliensV2"/>-->
-<!--        <mapping class="Hibernate_Learnings.Hibernate.Student"/>-->
+        <!--        <mapping class="Hibernate_Learnings.Hibernate.Aliens"/>-->
+        <!--        <mapping class="Hibernate_Learnings.Hibernate.AnnotationsClasses"/>-->
+        <!--        <mapping class="Hibernate_Learnings.Hibernate.AliensV2"/>-->
+        <!--        <mapping class="Hibernate_Learnings.Hibernate.Student"/>-->
         <mapping class="Hibernate_Learnings.Hibernate.Caching.LevelCaching"/>
 
+<!--        &lt;!&ndash;For Enable second level Cache&ndash;&gt;-->
+        <property name="hibernate.cache.use_second_level_cache">true</property>
+        <property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
 
+        <!--        <property name="hibernate.javax.cache.provider">org.ehcache.jsr107.EhcacheCachingProvider</property>-->
 
     </session-factory>
 </hibernate-configuration>
+
+
