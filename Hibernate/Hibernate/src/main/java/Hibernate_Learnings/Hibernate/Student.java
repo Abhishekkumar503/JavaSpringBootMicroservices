@@ -1,6 +1,6 @@
 package Hibernate_Learnings.Hibernate;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 import java.util.ArrayList;
 import java.util.List;

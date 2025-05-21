@@ -1,6 +1,6 @@
 package Hibernate_Learnings.Hibernate;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "Annotation_Lernering")

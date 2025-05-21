@@ -1,6 +1,6 @@
 package Hibernate_Learnings.Hibernate;
 
-import jakarta.persistence.Embeddable;
+import javax.persistence.Embeddable;
 
 @Embeddable
 public class EmbededableObject {

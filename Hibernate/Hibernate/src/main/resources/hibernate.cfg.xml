@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE hibernate-configuration PUBLIC
         "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
-        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
-
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 
 <hibernate-configuration>
     <session-factory>
@@ -33,6 +32,13 @@
         <!-- Automatically create tables -->
         <property name="hbm2ddl.auto">update</property>
 
+        <!-- Enable second-level and query cache -->
+        <property name="hibernate.cache.use_second_level_cache">true</property>
+        <property name="hibernate.cache.use_query_cache">true</property>
+        <property name="hibernate.cache.region.factory_class">org.hibernate.cache.jcache.JCacheRegionFactory</property>
+        <property name="hibernate.javax.cache.provider">org.ehcache.jsr107.EhcacheCachingProvider</property>
+        <property name="hibernate.javax.cache.uri">ehcache.xml</property>
+
         <!-- Mention your entity class -->
         <!--        <mapping class="Hibernate_Learnings.Hibernate.Aliens"/>-->
         <!--        <mapping class="Hibernate_Learnings.Hibernate.AnnotationsClasses"/>-->
@@ -40,11 +46,6 @@
         <!--        <mapping class="Hibernate_Learnings.Hibernate.Student"/>-->
         <mapping class="Hibernate_Learnings.Hibernate.Caching.LevelCaching"/>
 
-<!--        &lt;!&ndash;For Enable second level Cache&ndash;&gt;-->
-        <property name="hibernate.cache.use_second_level_cache">true</property>
-        <property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
-
-        <!--        <property name="hibernate.javax.cache.provider">org.ehcache.jsr107.EhcacheCachingProvider</property>-->
 
     </session-factory>
 </hibernate-configuration>
