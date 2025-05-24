@@ -17,6 +17,7 @@ public class HOSPLC_Runner {
 
 
         //To Store Data in HQLClass Table
+        /*
         Random random = new Random();
         for (int i = 202; i <= 250; i++)
         {
@@ -27,6 +28,21 @@ public class HOSPLC_Runner {
             session.save(hosplcClass);
 
         }
+
+         */
+
+        HOSPLC_Class hosplcClass = new HOSPLC_Class();
+        hosplcClass.setHosplcName("NAME252");
+        hosplcClass.setHosplcNum(252);
+        hosplcClass.setHoslcType("Type252");
+        session.save(hosplcClass);
+
+        hosplcClass.setHoslcType("Type251");
+
+
         tx.commit();
+
+        session.detach(hosplcClass);
+        hosplcClass.setHoslcType("Type253");
     }
 }
