@@ -46,8 +46,9 @@
         <!--        <mapping class="Hibernate_Learnings.Hibernate.Student"/>-->
 <!--        <mapping class="Hibernate_Learnings.Hibernate.Caching.LevelCaching"/>-->
 <!--        <mapping class="Hibernate_Learnings.Hibernate.HQL.HQLClass"/>-->
-        <mapping class="Hibernate_Learnings.Hibernate.HOSPLC.HOSPLC_Class"/>
+<!--        <mapping class="Hibernate_Learnings.Hibernate.HOSPLC.HOSPLC_Class"/>-->
 
+        <mapping class="Hibernate_Learnings.Hibernate.JPA.JPAClass"/>
 
     </session-factory>
 </hibernate-configuration>
