@@ -3,7 +3,7 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.RestApi</groupId>
+    <groupId>com.restapi</groupId>
     <artifactId>RestApiLearner</artifactId>
     <packaging>war</packaging>
     <version>0.0.1-SNAPSHOT</version>
@@ -61,7 +61,7 @@
         -->
     </dependencies>
     <properties>
-        <jersey.version>4.0.0-M2</jersey.version>
+        <jersey.version>3.1.8</jersey.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 </project>
