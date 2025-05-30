@@ -1,4 +1,4 @@
-package com.restapi.RestAPILearner;
+package com.RestAPI.Learner.RestAPI;
 
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
