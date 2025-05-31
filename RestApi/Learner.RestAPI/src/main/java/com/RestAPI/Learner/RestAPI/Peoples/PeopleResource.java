@@ -13,6 +13,7 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
 
 import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.core.MediaType;
 
 @Path("peoples")
 public class PeopleResource {
@@ -56,15 +57,12 @@ public class PeopleResource {
 	public List<Peoples> getListPeoples()
 	{
 		System.out.println("In Resource!");
-		
-		
-		
 		return repo.getPeoples();
 	}
 	
 	@GET
 	@Path("{point}")
-	@Produces(jakarta.ws.rs.core.MediaType.APPLICATION_XML)
+	@Produces({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
 	public Peoples getPeople(@PathParam("point") int point)
 	{
 		return repo.getPoeple(point);
