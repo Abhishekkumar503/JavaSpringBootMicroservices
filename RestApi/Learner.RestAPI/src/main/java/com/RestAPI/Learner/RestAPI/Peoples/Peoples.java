@@ -19,4 +19,9 @@ public class Peoples {
 	public void setPoints(int points) {
 		this.points = points;
 	}
+	@Override
+	public String toString() {
+		return "Peoples [name=" + name + ", points=" + points + "]";
+	}
+	
 }
