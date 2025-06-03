@@ -14,7 +14,7 @@ public class PeopleResource {
 	@Autowired
 	private PeopleRepo repo;
 	
-	@GetMapping("/peoples") 
+	@GetMapping("/peoplesWithSQL") 
 	public List<Peoples> getListPeoples()
 	{
 		System.out.println("In Resource!");
