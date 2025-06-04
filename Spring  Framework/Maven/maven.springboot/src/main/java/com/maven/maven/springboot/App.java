@@ -1,14 +1,20 @@
 package com.maven.maven.springboot;
 
-/**
- * Hello world!
- *
- */
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.FileSystemResource;
+
+
+
 
 public class App 
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+    	BeanFactory factory = new XmlBeanFactory(new ClassPathResource("Spring.xml"));
+    	
+    	Peoples ppl = (Peoples) factory.getBean("Peoples");
+    	ppl.Code();
     }
 }

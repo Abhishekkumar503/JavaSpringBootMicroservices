@@ -1,5 +1,6 @@
 package com.maven.maven.springboot;
 
+
 import org.springframework.stereotype.Component;
 
 @Component
@@ -23,7 +24,6 @@ public class Peoples {
 		return "Peoples [points=" + points + ", name=" + name + "]";
 	}
 	
-
 	public void Code()
 	{
 		System.out.println("In Code method!");
