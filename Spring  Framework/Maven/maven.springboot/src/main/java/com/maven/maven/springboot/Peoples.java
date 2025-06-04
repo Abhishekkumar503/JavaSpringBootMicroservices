@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Peoples {
-	private int points;
+	private int points = 200;
 	private String name;
 	public int getPoints() {
 		return points;
@@ -24,6 +24,11 @@ public class Peoples {
 		return "Peoples [points=" + points + ", name=" + name + "]";
 	}
 	
+	
+	
+	public Peoples() {
+		System.out.println(" You're in Constructor !!");
+	}
 	public void Code()
 	{
 		System.out.println("In Code method!");

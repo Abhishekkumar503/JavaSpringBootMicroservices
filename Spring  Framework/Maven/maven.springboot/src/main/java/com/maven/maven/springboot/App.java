@@ -22,7 +22,13 @@ public class App
 //    	Peoples ppl = (Peoples) factory.getBean("Peoples");
     	
     	Peoples ppl = (Peoples) context.getBean("Peoples");
-    	
+    	ppl.setPoints(100);
+    	System.out.println(ppl.getPoints());
     	ppl.Code();
+    	
+    	Peoples pp2 = (Peoples) context.getBean("Peoples");
+    	System.out.println(pp2.getPoints());
+    	pp2.Code();
     }
 }
+
