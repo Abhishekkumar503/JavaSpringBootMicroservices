@@ -6,6 +6,8 @@
            https://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- Example bean definition -->
-    <bean id="Peoples" class="com.maven.maven.springboot.Peoples" scope = "prototype"/>
+    <bean id="Peoples" class="com.maven.maven.springboot.Peoples" scope = "prototype">
+    <property name="points"  value = "150"></property>
+    </bean>
 
 </beans>
