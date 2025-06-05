@@ -8,6 +8,9 @@
     <!-- Example bean definition -->
     <bean id="Peoples" class="com.maven.maven.springboot.Peoples" scope = "prototype">
     <property name="points"  value = "150"></property>
+    <property name="laptop"  ref = "laptop"></property>
     </bean>
+    
+     <bean id="laptop" class="com.maven.maven.springboot.Laptop" scope = "prototype"></bean>
 
 </beans>

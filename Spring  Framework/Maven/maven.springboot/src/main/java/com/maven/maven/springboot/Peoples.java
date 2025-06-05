@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 public class Peoples {
 	private int points = 200;
 	private String name;
+	private Laptop laptop;
 	public int getPoints() {
 		return points;
 	}
@@ -32,5 +33,14 @@ public class Peoples {
 	public void Code()
 	{
 		System.out.println("In Code method!");
+		laptop.Compile();
 	}
+	public Laptop getLaptop() {
+		return laptop;
+	}
+	public void setLaptop(Laptop laptop) {
+		this.laptop = laptop;
+	}
+	
+	
 }
