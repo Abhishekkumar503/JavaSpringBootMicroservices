@@ -6,13 +6,13 @@
            https://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- Example bean definition -->
-    <bean id="Peoples" class="com.maven.maven.springboot.Peoples" autowire="byName" scope="prototype">
+    <bean id="Peoples" class="com.maven.maven.springboot.Peoples" autowire="byType" scope="prototype">
   <!-- <constructor-arg value = "300"></constructor-arg>  --> 
 	 <property name="points"  value = "150"></property>  	
   <!--   <property name="computer"  ref = "desktop"></property>--> 
     </bean>
     
-     <bean id="laptop" class="com.maven.maven.springboot.Laptop" scope = "prototype"></bean>
-     <bean id="desktop" class="com.maven.maven.springboot.Desktop" scope = "prototype"></bean>
+     <bean id="laptop" class="com.maven.maven.springboot.Laptop" scope = "prototype" primary="true"></bean>
+     <bean id="desktop" class="com.maven.maven.springboot.Desktop" scope = "prototype" primary="true"></bean>
 
 </beans>
