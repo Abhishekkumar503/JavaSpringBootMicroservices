@@ -7,14 +7,13 @@ import org.springframework.stereotype.Component;
 public class Peoples {
 	private int points = 200;
 	private String name;
-	private Laptop laptop;
+	private Computer computer;
 	
 	
 	
-	public Peoples(int points) {
-		super();
-		this.points = points;
-	}
+//	public Peoples(int points) {
+//		this.points = points;
+//	}
 	public int getPoints() {
 		return points;
 	}
@@ -33,20 +32,30 @@ public class Peoples {
 	}
 	
 	
-//	public Peoples() {
-//		System.out.println(" You're in Constructor !!");
-//	}
+	public Peoples() {
+		System.out.println(" You're in Constructor !!");
+	}
 	public void Code()
 	{
 		System.out.println("In Code method!");
-		laptop.Compile();
+		computer.Compile();
 	}
-	public Laptop getLaptop() {
-		return laptop;
+//	public Laptop getLaptop() {
+//		return laptop;
+//	}
+//	public void setLaptop(Laptop laptop) {
+//		this.laptop = laptop;
+//	}
+	public Computer getComputer() {
+		return computer;
 	}
-	public void setLaptop(Laptop laptop) {
-		this.laptop = laptop;
+	public void setComputer(Computer computer) {
+		this.computer = computer;
 	}
+	
+	
+	
+	
 	
 	
 }

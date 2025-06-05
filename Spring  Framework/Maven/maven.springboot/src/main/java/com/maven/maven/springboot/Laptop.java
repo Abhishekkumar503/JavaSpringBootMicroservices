@@ -1,10 +1,11 @@
 package com.maven.maven.springboot;
 
-public class Laptop {
+public class Laptop implements Computer{
 	
-	void Compile()
+	@Override
+	public void Compile()
 	{
-		System.out.println("In Compile!!");
+		System.out.println("Code Compiled in Laptop!");
 	}
 
 }
