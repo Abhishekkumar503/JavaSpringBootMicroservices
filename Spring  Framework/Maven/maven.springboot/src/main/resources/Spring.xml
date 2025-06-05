@@ -7,7 +7,8 @@
 
     <!-- Example bean definition -->
     <bean id="Peoples" class="com.maven.maven.springboot.Peoples" scope = "prototype">
-    <property name="points"  value = "150"></property>
+   <constructor-arg value = "300"></constructor-arg>
+	<!-- <property name="points"  value = "150"></property>  -->	
     <property name="laptop"  ref = "laptop"></property>
     </bean>
     

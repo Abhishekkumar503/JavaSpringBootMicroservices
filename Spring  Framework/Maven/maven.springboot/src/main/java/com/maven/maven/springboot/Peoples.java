@@ -8,6 +8,13 @@ public class Peoples {
 	private int points = 200;
 	private String name;
 	private Laptop laptop;
+	
+	
+	
+	public Peoples(int points) {
+		super();
+		this.points = points;
+	}
 	public int getPoints() {
 		return points;
 	}
@@ -26,10 +33,9 @@ public class Peoples {
 	}
 	
 	
-	
-	public Peoples() {
-		System.out.println(" You're in Constructor !!");
-	}
+//	public Peoples() {
+//		System.out.println(" You're in Constructor !!");
+//	}
 	public void Code()
 	{
 		System.out.println("In Code method!");
