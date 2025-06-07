@@ -13,14 +13,17 @@ public class SpringbootJdbcApplication {
 	public static void main(String[] args) {
 		ApplicationContext context =SpringApplication.run(SpringbootJdbcApplication.class, args);
 		People ppl =context.getBean(People.class);
-		ppl.setId(111);
-		ppl.setName("Abhishek");
-		ppl.setTech("JAVA");
+		ppl.setId(104);
+		ppl.setName("Vijay");
+		ppl.setTech("HR");
 		
 		PeopleRepo repo = context.getBean(PeopleRepo.class);
 		repo.save(ppl);
 		
-		System.out.println(repo.findAll());
+		System.out.println(repo.findAll1());
+		System.out.println(repo.findAll2());
+		System.out.println(repo.findAll3());
+		System.out.println(repo.findAll4());
 	}
 
 }
