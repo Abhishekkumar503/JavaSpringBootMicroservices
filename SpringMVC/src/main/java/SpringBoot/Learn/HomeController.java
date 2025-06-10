@@ -3,6 +3,7 @@ package SpringBoot.Learn;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
@@ -19,13 +20,26 @@ public class HomeController {
 		return "index.jsp";
 	}
 	
+//	@RequestMapping("add")
+//	public String add(@RequestParam ("num1") int firstNum , @RequestParam ("num2") int secondnum , HttpSession session)
+//	{
+//		int result = firstNum + secondnum ;
+//		
+//		session.setAttribute("result", result);
+//		return "Result.jsp";
+//	}
+	
 	@RequestMapping("add")
-	public String add(@RequestParam ("num1") int firstNum , @RequestParam ("num2") int secondnum , HttpSession session)
+	public ModelAndView add(@RequestParam ("num1") int firstNum , @RequestParam ("num2") int secondnum )
 	{
+		ModelAndView mv = new ModelAndView(); // Model attribute
+		mv.setViewName("Result.jsp"); // to set the view name LIKE next page
 		int result = firstNum + secondnum ;
 		
-		session.setAttribute("result", result);
-		return "Result.jsp";
+		mv.addObject("result", result); // adding both obj and value
+		return mv;
 	}
+	
+	
 
 }
