@@ -17,7 +17,7 @@ public class HomeController {
   
 	@RequestMapping("/r")
 	public String home () {
-		return "index.jsp";
+		return "index";
 	}
 	
 //	@RequestMapping("add")
@@ -29,16 +29,30 @@ public class HomeController {
 //		return "Result.jsp";
 //	}
 	
+//	@RequestMapping("add")
+//	public ModelAndView add(@RequestParam ("num1") int firstNum , @RequestParam ("num2") int secondnum )
+//	{
+//		ModelAndView mv = new ModelAndView(); // Model attribute
+//		mv.setViewName("Result.jsp"); // to set the view name LIKE next page
+//		int result = firstNum + secondnum ;
+//		
+//		mv.addObject("result", result); // adding both obj and value
+//		return mv;
+//	
+//	}
+	
 	@RequestMapping("add")
 	public ModelAndView add(@RequestParam ("num1") int firstNum , @RequestParam ("num2") int secondnum )
 	{
 		ModelAndView mv = new ModelAndView(); // Model attribute
-		mv.setViewName("Result.jsp"); // to set the view name LIKE next page
+		mv.setViewName("Result"); // to set the view name LIKE next page
 		int result = firstNum + secondnum ;
 		
 		mv.addObject("result", result); // adding both obj and value
 		return mv;
+	
 	}
+	
 	
 	
 
