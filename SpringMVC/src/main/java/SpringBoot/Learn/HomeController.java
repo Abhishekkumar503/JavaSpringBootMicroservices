@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import SpringBoot.Learn.model.People;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 
@@ -66,6 +67,17 @@ public class HomeController {
 	
 	}
 	
-	
+	@RequestMapping("addPeople")
+	public String addPeople (@RequestParam ("points") int points , @RequestParam ("name") String name , Model m) {
+		
+		People ppl = new People();
+		ppl.setPoints(points);
+		ppl.setName(name);
+		
+		m.addAttribute("people",ppl);
+		
+		return "Result";
+		
+	}
 
 }
