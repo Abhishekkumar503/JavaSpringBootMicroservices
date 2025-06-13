@@ -3,6 +3,7 @@ package SpringBoot.Learn;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -67,17 +68,44 @@ public class HomeController {
 	
 	}
 	
+//	@RequestMapping("addPeople")
+//	public String addPeople (@RequestParam ("points") int points , @RequestParam ("name") String name , Model m) {
+//		
+//		People ppl = new People();
+//		ppl.setPoints(points);
+//		ppl.setName(name);
+//		
+//		m.addAttribute("people",ppl);
+//		
+//		return "Result";
+//		
+//	}
+	
+	
+	// EX 1
+//	@RequestMapping("addPeople")
+//	public String addPeople (@ModelAttribute People ppl, Model m) {
+//		
+//
+//		m.addAttribute("people",ppl);
+//		
+//		return "Result";
+//		
+//	}
+	
+	//Ex : 2
+//	@RequestMapping("addPeople")
+//	public String addPeople (@ModelAttribute("people") People ppl) {
+//		
+//
+//		return "Result";
+//		
+//	}
+	
+	//Ex : 3
 	@RequestMapping("addPeople")
-	public String addPeople (@RequestParam ("points") int points , @RequestParam ("name") String name , Model m) {
-		
-		People ppl = new People();
-		ppl.setPoints(points);
-		ppl.setName(name);
-		
-		m.addAttribute("people",ppl);
-		
-		return "Result";
-		
+	public String addPeople (People ppl) {
+				return "Result";
 	}
 
 }
