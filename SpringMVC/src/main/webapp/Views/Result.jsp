@@ -8,7 +8,11 @@
 </head>
 <body>
 
-<h1>Your Result is : ${people}</h1>
+
+<h1>Welcome back ${name} </h1>
+<h2>Your Result is : ${people}</h2>
+
+
 
 </body>
 </html>

@@ -18,6 +18,11 @@ import jakarta.servlet.http.HttpSession;
 @Controller
 public class HomeController {
 
+	@ModelAttribute
+	public void name(Model m)
+	{
+		m.addAttribute("name","Abhishek");
+	}
   
 	@RequestMapping("/r")
 	public String home () {
@@ -107,5 +112,8 @@ public class HomeController {
 	public String addPeople (People ppl) {
 				return "Result";
 	}
+	
+	
+	
 
 }
