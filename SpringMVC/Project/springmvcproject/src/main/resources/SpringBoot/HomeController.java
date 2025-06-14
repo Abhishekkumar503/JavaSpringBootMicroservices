@@ -1,15 +1,10 @@
-package SpringBoot.Learn;
-
-import java.net.Authenticator.RequestorType;
+package SpringBoot;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -113,20 +108,9 @@ public class HomeController {
 //	}
 	
 	//Ex : 3
-//	@RequestMapping("addPeople")
-//	public String addPeople (People ppl) {
-//				return "Result";
-//	}
-	
-	//Ex : 4
-//		@RequestMapping(value="addPeople", method = RequestMethod.POST)
-//		public String addPeople1 (@ModelAttribute People ppl) {
-//					return "Result";
-//		}
-	
-	@PostMapping("addPeople")
-	public String addPeople1 (@ModelAttribute People ppl) {
-		return "Result";
+	@RequestMapping("addPeople")
+	public String addPeople (People ppl) {
+				return "Result";
 	}
 	
 	
