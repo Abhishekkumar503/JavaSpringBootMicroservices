@@ -1,6 +1,8 @@
 package SpringBoot.Learn;
 
 import java.net.Authenticator.RequestorType;
+import java.util.Arrays;
+import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -123,11 +125,20 @@ public class HomeController {
 //		public String addPeople1 (@ModelAttribute People ppl) {
 //					return "Result";
 //		}
-	
+
 	@PostMapping("addPeople")
 	public String addPeople1 (@ModelAttribute People ppl) {
 		return "Result";
 	}
+	
+	@GetMapping("addPeople")
+	public String getPeople(Model m)
+	{
+		List<People> list = Arrays.asList(new People(101,"Abhishek"),new People(102,"udai"));
+		m.addAttribute("People",list);
+		return "showPeople";
+	}
+	
 	
 	
 	

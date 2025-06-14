@@ -4,6 +4,12 @@ public class People {
 
 	private int points;
 	private String name;
+	
+	public People(int points, String name) {
+		super();
+		this.points = points;
+		this.name = name;
+	}
 	public int getPoints() {
 		return points;
 	}

@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1>Welcome to Spring MVC</h1>
-<form action="addPeople" method="post">
+<form action="addPeople" method="get">
 Enter your point : <input type="text" name="points"><br>
 Enter your name : <input type="text" name="name"><br>
 <input type="Submit">
