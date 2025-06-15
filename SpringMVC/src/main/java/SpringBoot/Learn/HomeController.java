@@ -141,11 +141,25 @@ public class HomeController {
 //		return "showPeople";
 //	}
 	
-	@GetMapping("addPeople")
+	@GetMapping("viewAll")
 	public String getPeople(Model m)
 	{
 		List<People> peopleList = repo.findAll();
 		m.addAttribute("People", peopleList);
+		return "showPeople";
+	}
+	
+
+	@GetMapping("getPeople")
+	public String getOnePeople(@RequestParam int onePoint, Model m)
+	{
+		m.addAttribute("People",repo.findById(onePoint).orElseThrow(() -> new RuntimeException("Entity not found")));
+		return "showPeople";
+	}
+	
+	@GetMapping("addPeople")
+	public String addPeople (@ModelAttribute People ppl) {
+		repo.save(ppl);
 		return "showPeople";
 	}
 	
