@@ -16,8 +16,16 @@
 ----------------------------------------------------------------------------------------------
 <br>
 <form action="getPeople" method="get">
-<h2>Do you want to single person? then </h2>
+<h2>Do you want to display single person with Points? then </h2>
 Enter your point : <input type="text" name="onePoint"><br>
+<input type="Submit">
+</form>
+<br>
+----------------------------------------------------------------------------------------------
+<br>
+<form action="getPeopleByName" method="get">
+<h2>Do you want to display single person with Name? then </h2>
+Enter your point : <input type="text" name="oneName"><br>
 <input type="Submit">
 </form>
 <br>
