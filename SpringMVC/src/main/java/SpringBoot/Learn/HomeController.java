@@ -170,5 +170,12 @@ public class HomeController {
 		return "showPeople";
 	}
 	
+	@GetMapping("getPeopleByNameWithQuery")
+	public String find(@RequestParam String oneNameByQuery, Model m)
+	{
+		m.addAttribute("People",repo.findByNameOrderByPointsDesc(oneNameByQuery));
+		return "showPeople";
+	}
+	
 
 }

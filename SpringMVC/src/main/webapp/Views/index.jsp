@@ -25,7 +25,15 @@ Enter your point : <input type="text" name="onePoint"><br>
 <br>
 <form action="getPeopleByName" method="get">
 <h2>Do you want to display single person with Name? then </h2>
-Enter your point : <input type="text" name="oneName"><br>
+Enter your Name : <input type="text" name="oneName"><br>
+<input type="Submit">
+</form>
+<br>
+----------------------------------------------------------------------------------------------
+<br>
+<form action="getPeopleByNameWithQuery" method="get">
+<h2>Do you want to display single person with Name By Query? then </h2>
+Enter your Name : <input type="text" name="oneNameByQuery"><br>
 <input type="Submit">
 </form>
 <br>
