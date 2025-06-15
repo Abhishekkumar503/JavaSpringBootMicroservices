@@ -1,9 +1,10 @@
 package SpringBoot.Learn;
 
-import java.net.Authenticator.RequestorType;
+
 import java.util.Arrays;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -21,9 +22,12 @@ import jakarta.servlet.http.HttpSession;
 
 
 
-
 @Controller
 public class HomeController {
+	
+	@Autowired
+	PeopleRepo repo;
+	
 
 	@ModelAttribute
 	public void name(Model m)
@@ -74,10 +78,8 @@ public class HomeController {
 	public String add(@RequestParam ("num1") int firstNum , @RequestParam ("num2") int secondnum , ModelMap mv)
 	{
 		int result = firstNum + secondnum ;
-		
 		mv.addAttribute("result", result); // adding both obj and value
 		return "Result";
-	
 	}
 	
 //	@RequestMapping("addPeople")
@@ -126,21 +128,26 @@ public class HomeController {
 //					return "Result";
 //		}
 
-	@PostMapping("addPeople")
-	public String addPeople1 (@ModelAttribute People ppl) {
-		return "Result";
-	}
+//	@PostMapping("addPeople")
+//	public String addPeople1 (@ModelAttribute People ppl) {
+//		return "Result";
+//	}
+	
+//	@GetMapping("addPeople")
+//	public String getPeople(Model m)
+//	{
+//		List<People> list = Arrays.asList(new People(101,"Abhishek"),new People(102,"udai"));
+//		m.addAttribute("People",list);
+//		return "showPeople";
+//	}
 	
 	@GetMapping("addPeople")
 	public String getPeople(Model m)
 	{
-		List<People> list = Arrays.asList(new People(101,"Abhishek"),new People(102,"udai"));
-		m.addAttribute("People",list);
+		List<People> peopleList = repo.findAll();
+		m.addAttribute("People", peopleList);
 		return "showPeople";
 	}
-	
-	
-	
 	
 
 }

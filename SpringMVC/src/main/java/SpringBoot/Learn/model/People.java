@@ -1,10 +1,22 @@
 package SpringBoot.Learn.model;
 
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+
+@Entity
 public class People {
 
+	@Id
 	private int points;
 	private String name;
 	
+	
+	
+	public People() {
+	
+	}
 	public People(int points, String name) {
 		super();
 		this.points = points;
