@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -40,8 +41,8 @@ public class PeopleController {
 	}
 	
 	@ResponseBody
-	@PostMapping("people")
-	public String addPeople (People ppl) {
+	@PostMapping(path = "people" ,  consumes = {"application/json"})
+	public String addPeople (@RequestBody People ppl) {
 		repo.save(ppl);
 		return "People Inserted!!";
 	}
