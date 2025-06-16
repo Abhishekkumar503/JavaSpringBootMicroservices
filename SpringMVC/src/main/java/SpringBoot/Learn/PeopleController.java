@@ -22,7 +22,7 @@ public class PeopleController {
 	PeopleRepo repo;
 	
 	@ResponseBody
-	@GetMapping("people")
+	@GetMapping(path="people" , produces = {"application/xml"})
 	public List<People> getPeople()
 	{
 		List<People> peopleList = repo.findAll();
