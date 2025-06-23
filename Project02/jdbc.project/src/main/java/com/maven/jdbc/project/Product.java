@@ -1,13 +1,14 @@
 package com.maven.jdbc.project;
 
 public class Product {
-
+	
+	
 	private  String name ;
 	private String type ;
 	private String place;
-	private int warrenty;
+	private String warrenty;
 	
-	public Product(String name, String type, String place, int warrenty) {
+	public Product(String name, String type, String place, String warrenty) {
 		this.name = name;
 		this.type = type;
 		this.place = place;
@@ -38,11 +39,11 @@ public class Product {
 		this.place = place;
 	}
 
-	public int getWarrenty() {
+	public String getWarrenty() {
 		return warrenty;
 	}
 
-	public void setWarrenty(int warrenty) {
+	public void setWarrenty(String warrenty) {
 		this.warrenty = warrenty;
 	}
 
