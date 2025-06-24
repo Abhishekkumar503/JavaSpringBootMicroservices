@@ -22,7 +22,8 @@ public class Product {
 		
 	}
 	
-	public Product(String name, String type, String place, String warrenty) {
+	public Product(int i, String name, String type, String place, String warrenty) {
+		this.id = id;
 		this.name = name;
 		this.type = type;
 		this.place = place;

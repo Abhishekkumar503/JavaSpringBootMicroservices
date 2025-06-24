@@ -14,42 +14,41 @@ public class ProductService {
 	ProductDB productdb ;
 	
 	
-//	ArrayList<Product> products = new ArrayList<>();
-//	
-//	public void addProduct(Product product) {
-//		// TODO Auto-generated method stub
-//		productdb.addProduct(product);
-//	}
-//
+	
+	public void addProduct(Product product) {
+		// TODO Auto-generated method stub
+		productdb.save(product);
+		System.out.println("Product Added!");
+	}
+
 	public List<Product> getAllProducts() {
 		// TODO Auto-generated method stub
 		return productdb.findAll();
 		
 	}
-//
-//	public void getOneProductByWarnty(String i) {
-//		// TODO Auto-generated method stub
-//		productdb.fetchDataByWarrenty(i);
-//					
-//	}
-//
-//	public void getProdcutByName(String name) {
-//		// TODO Auto-generated method stub
-//		productdb.fetchDataByName(name);
-//	}
-//	
-//	public void getProdcutByPlace(String place) {
-//		// TODO Auto-generated method stub
-//		productdb.fetchDataByPlace(place);
-//	}
-//
-//	public void getProdcutByText(String text) {
-//		// TODO Auto-generated method stub
-//		for(Product product : products)
-//		{
-//			if(product.getPlace().contains(text) || product.getType().contains(text) || product.getName().contains(text))
-//			System.out.println(product);
-//		}
-//		productdb.fetchDataByText(text);
-//	}
+
+	public List<Product> getProductByWarnty(String i) {
+		// TODO Auto-generated method stub
+		return productdb.findByWarrenty(i);			
+	}
+
+	public List<Product> getProdcutByName(String name) {
+		// TODO Auto-generated method stub
+		return productdb.findByName(name);
+	}
+	
+	public List<Product> getProdcutByPlace(String place) {
+		// TODO Auto-generated method stub
+		return productdb.findByPlace(place);
+	}
+
+	public List<Product> getProdcutByText(String text) {
+		// TODO Auto-generated method stub
+		return productdb.find(text);
+	}
+	
+	public Product getProductByID(int id) {
+		// TODO Auto-generated method stub
+		return productdb.findById(id).orElseThrow(() -> new RuntimeException("Entity not found"));
+	}
 }
