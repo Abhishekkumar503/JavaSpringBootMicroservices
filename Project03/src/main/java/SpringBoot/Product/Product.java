@@ -1,12 +1,26 @@
 package SpringBoot.Product;
 
+import jakarta.annotation.Generated;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Product {
 	
-	
-	private  String name ;
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	private int id;
+	private String name ;
 	private String type ;
 	private String place;
 	private String warrenty;
+	
+	public Product()
+	{
+		
+	}
 	
 	public Product(String name, String type, String place, String warrenty) {
 		this.name = name;
@@ -46,9 +60,19 @@ public class Product {
 	public void setWarrenty(String warrenty) {
 		this.warrenty = warrenty;
 	}
+	
 
 	@Override
 	public String toString() {
-		return "Product [name=" + name + ", type=" + type + ", place=" + place + ", warrenty=" + warrenty + "]";
+		return "Product [id=" + id + ", name=" + name + ", type=" + type + ", place=" + place + ", warrenty=" + warrenty
+				+ "]";
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 }

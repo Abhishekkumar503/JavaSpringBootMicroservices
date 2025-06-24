@@ -1,15 +1,17 @@
 package SpringBoot.Product;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 
 @Component
 public class ProductService {
 
-	ProductDB productdb = new ProductDB();
-	
+	@Autowired
+	ProductDB productdb ;
 	
 	
 //	ArrayList<Product> products = new ArrayList<>();
@@ -19,11 +21,11 @@ public class ProductService {
 //		productdb.addProduct(product);
 //	}
 //
-//	public void getAllProducts() {
-//		// TODO Auto-generated method stub
-//		productdb.getAlldata();
-//		
-//	}
+	public List<Product> getAllProducts() {
+		// TODO Auto-generated method stub
+		return productdb.findAll();
+		
+	}
 //
 //	public void getOneProductByWarnty(String i) {
 //		// TODO Auto-generated method stub
