@@ -55,10 +55,10 @@ public class ProductDB {
 		 String query="select * from Product";
 		try {
 			rs=st.executeQuery(query);
-			 // to incremnet the pointer use
+			 
 	        while(rs.next()) {
-	            rs.next();
-	            String userData = rs.getInt(1) + " : " + rs.getString(2)+ " : " + rs.getString(3)+ " : " + rs.getString(4)+ " : " + rs.getString(5);
+
+	            String userData = rs.getString(1) + " : " + rs.getString(2) + " : " + rs.getString(3)+ " : " + rs.getString(4) + " : " + rs.getString(5);
 	            System.out.println(userData);
 	        }
 		} catch (SQLException e) {
