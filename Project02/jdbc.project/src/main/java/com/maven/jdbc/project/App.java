@@ -26,22 +26,22 @@ ProductService productService = new ProductService();
     	
     	productService.getAllProducts();
     
-//    	System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-//    	
-////    	productService.getOneProductByWarnty("2");
-//    	
-//    	System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-//    	
-//    	productService.getProdcutByName("Asus");
-//    	
-//    	System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-//    	
-//    	productService.getProdcutByPlace("table");
-//    	
-//
-//    	System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-//    	
-//    	productService.getProdcutByText("Earbuds");
+    	System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+    	
+    	productService.getOneProductByWarnty("1");
+    	
+    	System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+    	
+    	productService.getProdcutByName("Realme Mobile"); // Make sure you have entered exact name
+    	
+    	System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+    	
+    	productService.getProdcutByPlace("table"); // Make sure you have entered exact place
+    	
+
+    	System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+    	
+    	productService.getProdcutByText("e");
     	
     
     }

@@ -17,37 +17,23 @@ public class ProductService {
 	public void getAllProducts() {
 		// TODO Auto-generated method stub
 		productdb.getAlldata();
-//		for(Product product : products)
-//		{
-//			System.out.println(product);
-//		}
+		
 	}
 
-//	public void getOneProductByWarnty(int i) {
-//		// TODO Auto-generated method stub
-//				for(Product product : products)
-//				{
-//					if(product.getWarrenty() == i)
-//					System.out.println(product);
-//				}
-//	}
+	public void getOneProductByWarnty(String i) {
+		// TODO Auto-generated method stub
+		productdb.fetchDataByWarrenty(i);
+					
+	}
 
 	public void getProdcutByName(String name) {
 		// TODO Auto-generated method stub
-		for(Product product : products)
-		{
-			if(product.getName() == name)
-			System.out.println(product);
-		}
+		productdb.fetchDataByName(name);
 	}
 	
 	public void getProdcutByPlace(String place) {
 		// TODO Auto-generated method stub
-		for(Product product : products)
-		{
-			if(product.getPlace().equals(place))
-			System.out.println(product);
-		}
+		productdb.fetchDataByPlace(place);
 	}
 
 	public void getProdcutByText(String text) {
@@ -57,5 +43,6 @@ public class ProductService {
 			if(product.getPlace().contains(text) || product.getType().contains(text) || product.getName().contains(text))
 			System.out.println(product);
 		}
+		productdb.fetchDataByText(text);
 	}
 }

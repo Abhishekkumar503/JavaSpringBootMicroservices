@@ -12,6 +12,7 @@ public class ProductDB {
 	Connection con;
 	Statement st;
 	ResultSet rs;
+	String userData;
 	public ProductDB() {
 		
         String url = "jdbc:mysql://localhost:3306/RestAPI";
@@ -29,7 +30,16 @@ public class ProductDB {
         
 	}
 	
-	
+	public void displayProduct(ResultSet rs)
+	{
+		try {
+			userData = rs.getString(1) + " : " + rs.getString(2) + " : " + rs.getString(3)+ " : " + rs.getString(4) + " : " + rs.getString(5);
+			 System.out.println(userData);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	
 	public void addProduct(Product product)
 	{
@@ -57,19 +67,73 @@ public class ProductDB {
 			rs=st.executeQuery(query);
 			 
 	        while(rs.next()) {
-
-	            String userData = rs.getString(1) + " : " + rs.getString(2) + " : " + rs.getString(3)+ " : " + rs.getString(4) + " : " + rs.getString(5);
-	            System.out.println(userData);
+	        	displayProduct(rs);
 	        }
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
-       
-
 	}
-	
+
+
+
+	public void fetchDataByWarrenty(String i) {
+		// TODO Auto-generated method stub
+		String query = "Select * from product where Warrenty = " + i;
+		try {
+			rs=st.executeQuery(query);
+			while (rs.next()) {
+			displayProduct(rs);
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	public void fetchDataByName(String name) {
+		// TODO Auto-generated method stub
+		String query = "Select * from product where Name = '" + name +"'";
+		try {
+			rs=st.executeQuery(query);
+			while (rs.next()) {
+			displayProduct(rs);
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	public void fetchDataByPlace(String place) {
+		// TODO Auto-generated method stub
+		String query = "Select * from product where Place = '" + place +"'";
+		try {
+			rs=st.executeQuery(query);
+			while (rs.next()) {
+			displayProduct(rs);
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	public void fetchDataByText(String text) {
+		// TODO Auto-generated method stub
+		String query = "Select * from product where Name like '%"+ text + "%' or Place like '%"+ text +
+				"%'  or type like '%"+ text + "%' or warrenty like '%"+ text + "%'";
+		try {
+			rs=st.executeQuery(query);
+			while (rs.next()) {
+			displayProduct(rs);
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	
 
 	
