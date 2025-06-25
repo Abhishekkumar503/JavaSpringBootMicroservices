@@ -20,4 +20,6 @@ public interface ProductDB extends JpaRepository<Product, Integer>{
 	@Query("from Product where name like %:text% or place like %:text% or type like %:text%")
 	List<Product> find(@Param("text") String text);
 
+	List<Product> findByType(String type);
+
 }

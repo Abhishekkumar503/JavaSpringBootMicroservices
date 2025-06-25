@@ -49,4 +49,9 @@ public class ProductService {
 		// TODO Auto-generated method stub
 		return productdb.findById(id).orElseThrow(() -> new RuntimeException("Entity not found"));
 	}
+
+	public List<Product> getProdcutByType(String type) {
+		// TODO Auto-generated method stub
+		return productdb.findByType(type);
+	}
 }
