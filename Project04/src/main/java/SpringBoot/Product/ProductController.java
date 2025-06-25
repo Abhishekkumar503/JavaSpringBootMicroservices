@@ -24,8 +24,8 @@ public class ProductController {
 	}
 	
 	@ResponseBody
-	@PostMapping(path = "/product" ,  consumes = {"application/json"})
-	public void saveProducts(Product product)
+	@PostMapping(path = "product" ,  consumes = {"application/json"})
+	public void saveProducts(@RequestBody Product product)
 	{
 		service.addProduct(product);
 	}
