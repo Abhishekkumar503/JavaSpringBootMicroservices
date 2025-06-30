@@ -14,4 +14,6 @@ public class Controller {
 	{
 		response.sendRedirect("/swagger-ui.html");
 	}
+	
+	
 }
