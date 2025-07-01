@@ -8,4 +8,6 @@
 </head>
 <body>
 <b>Welcome To Home Page.</b>
+
+<a href="/logout">Logout</a>
 </html>
