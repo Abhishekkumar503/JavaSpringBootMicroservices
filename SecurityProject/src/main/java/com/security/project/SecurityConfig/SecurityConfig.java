@@ -72,39 +72,69 @@ public class SecurityConfig {
 //}
 
 	
-	@Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http
-            .csrf().disable()
-            .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/login.jsp", "/logout-success.jsp", "/resources/**").permitAll()
-                .anyRequest().authenticated()
-            )
-            .formLogin(form -> form
-                .loginPage("/login.jsp")
-                .loginProcessingUrl("/login")  // should match your form action
-                .defaultSuccessUrl("/home.jsp", true)
-                .failureUrl("/login.jsp?error=true")
-                .permitAll()
-            )
-//            .logout(logout -> logout
-//                .invalidateHttpSession(true)
-//                .clearAuthentication(true)
-//                .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-//                .logoutSuccessUrl("/login.jsp?logout=true")
+//	@Bean
+//    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+//        http
+//            .csrf().disable()
+//            .authorizeHttpRequests(auth -> auth
+//                .requestMatchers("/login.jsp", "/logout-success.jsp", "/resources/**").permitAll()
+//                .anyRequest().authenticated()
+//            )
+//            .formLogin(form -> form
+//                .loginPage("/login.jsp")
+//                .loginProcessingUrl("/login")  // should match your form action
+//                .defaultSuccessUrl("/home.jsp", true)
+//                .failureUrl("/login.jsp?error=true")
 //                .permitAll()
-//            );
-            .logout(logout -> logout
-            	    .invalidateHttpSession(true)
-            	    .clearAuthentication(true)
-            	    .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-            	    .logoutSuccessUrl("/logout.jsp")
-            	    .permitAll()
-            	);
-
-
-        return http.build();
-    }
+//            )
+////            .logout(logout -> logout
+////                .invalidateHttpSession(true)
+////                .clearAuthentication(true)
+////                .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+////                .logoutSuccessUrl("/login.jsp?logout=true")
+////                .permitAll()
+////            );
+//            .logout(logout -> logout
+//            	    .invalidateHttpSession(true)
+//            	    .clearAuthentication(true)
+//            	    .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+//            	    .logoutSuccessUrl("/logout.jsp")
+//            	    .permitAll()
+//            	);
+//
+//
+//        return http.build();
+//    }
+	
+	
+	@Bean
+	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+	http
+	.csrf().disable()
+	.authorizeHttpRequests(auth -> auth
+	.requestMatchers("/login.jsp", "/logout-success.jsp", "/resources/**", "/error").permitAll()
+	.anyRequest().authenticated()
+	)
+	.formLogin(form -> form
+	.loginPage("/login.jsp")
+	.loginProcessingUrl("/login") // must match your form action
+	.defaultSuccessUrl("/home.jsp", true)
+	.failureUrl("/login.jsp?error=true")
+	.permitAll()
+	)
+	.oauth2Login(oauth2 -> oauth2
+	.loginPage("/login.jsp") // use same login page
+	.defaultSuccessUrl("/home.jsp", true)
+	)
+	.logout(logout -> logout
+	.invalidateHttpSession(true)
+	.clearAuthentication(true)
+	.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+	.logoutSuccessUrl("/logout.jsp")
+	.permitAll()
+	);
+	return http.build();
+	}
 
 
 

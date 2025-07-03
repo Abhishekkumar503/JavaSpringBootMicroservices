@@ -21,5 +21,7 @@
         <input type="password" name="password" /><br/><br/>
         <input type="submit" value="Login" />
     </form>
+    <br>
+<a href="/oauth2/authorization/google">Login with Google</a>
 </body>
 </html>

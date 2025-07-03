@@ -8,6 +8,6 @@
 </head>
 <body>
 <b>Welcome To Home Page.</b>
-
+<b>Welcome To Home Page. Do you want to logout? If Yes Click to navigate -->
 <a href="/logout">Logout</a>
 </html>
