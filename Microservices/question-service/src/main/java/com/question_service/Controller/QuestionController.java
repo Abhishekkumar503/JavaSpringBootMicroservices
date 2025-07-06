@@ -1,5 +1,6 @@
 package com.question_service.Controller;
 
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.http.ResponseEntity;
@@ -10,6 +11,7 @@ import com.question_service.model.QuestionWrapper;
 import com.question_service.model.Response;
 import com.question_service.service.QuestionService;
 
+import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -21,6 +23,11 @@ public class QuestionController {
 
     @Autowired
     Environment environment;
+
+    public void redirect(HttpServletResponse response) throws IOException
+    {
+        response.sendRedirect("/swagger-ui.html");
+    }
 
     @GetMapping("allQuestions")
     public ResponseEntity<List<Question>> getAllQuestions(){
@@ -54,10 +61,4 @@ public class QuestionController {
     {
         return questionService.getScore(responses);
     }
-
-
-    // generate
-    // getQuestions (questionid)
-    // getScore
-
 }
