@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.question_service.dao.QuestionDao;
+import com.question_service.dao.QuestionRepositoryCustomImpl;
 import com.question_service.model.Question;
 import com.question_service.model.QuestionWrapper;
 import com.question_service.model.Response;
@@ -18,6 +19,9 @@ public class QuestionService {
 
 	@Autowired
     QuestionDao questionDao;
+	
+	@Autowired
+	QuestionRepositoryCustomImpl questionRepositoryCustomImpl;
 
     public ResponseEntity<List<Question>> getAllQuestions() {
         try {
@@ -44,7 +48,7 @@ public class QuestionService {
     }
 
     public ResponseEntity<List<Integer>> getQuestionsForQuiz(String categoryName, Integer numQuestions) {
-        List<Integer> questions = questionDao.findRandomQuestionsByCategory(categoryName, numQuestions);
+        List<Integer> questions = questionRepositoryCustomImpl.findRandomQuestionsByCategory(categoryName, numQuestions);
         return new ResponseEntity<>(questions, HttpStatus.OK);
     }
 
