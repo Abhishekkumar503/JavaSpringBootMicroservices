@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.question_service.dao.QuestionDao;
 import com.question_service.dao.QuestionRepositoryCustomImpl;
@@ -23,6 +24,7 @@ public class QuestionService {
 	@Autowired
 	QuestionRepositoryCustomImpl questionRepositoryCustomImpl;
 
+	@ResponseBody
     public ResponseEntity<List<Question>> getAllQuestions() {
         try {
             return new ResponseEntity<>(questionDao.findAll(), HttpStatus.OK);
@@ -31,6 +33,7 @@ public class QuestionService {
         }
         return new ResponseEntity<>(new ArrayList<>(), HttpStatus.BAD_REQUEST);
     }
+	
 
     public ResponseEntity<List<Question>> getQuestionsByCategory(String category) {
         try {
@@ -79,7 +82,7 @@ public class QuestionService {
 
         for(Response response : responses){
             Question question = questionDao.findById(response.getId()).get();
-            if(response.getResponse().equals(question.getRightAnswer()))
+            if(response.getResponse().equals(question.getRightAnswer()));
                 right++;
         }
         return new ResponseEntity<>(right, HttpStatus.OK);
